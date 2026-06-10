@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relationship Lab: Communication, Cohabitation, and Marriage</title>
+<title>SOC-213 Module Five Relationship Lab</title>
 
 <style>
 body{
@@ -55,6 +54,13 @@ body{
   border-radius:12px;
   margin-top:15px;
 }
+.warning-box{
+  background:#fff4f4;
+  border-left:6px solid #d65a5a;
+  padding:18px;
+  border-radius:12px;
+  margin-top:15px;
+}
 button{
   background:#7b5ea7;
   color:white;
@@ -63,6 +69,7 @@ button{
   border-radius:8px;
   cursor:pointer;
   margin-top:10px;
+  margin-right:8px;
 }
 button:hover{
   background:#65488e;
@@ -82,17 +89,28 @@ select{
   max-width:700px;
   margin-top:8px;
 }
+.score-row{
+  background:#ffffff;
+  border:1px solid #e2e2e2;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+.footer{
+  text-align:center;
+  padding:18px;
+  color:#5b5b5b;
+}
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
   <div class="hero">
     <div style="font-size:56px;">💍 ❤️ 💬 🛠️</div>
     <h1>Relationship Lab</h1>
-    <p>Explore how sociologists explain singlehood, cohabitation, marriage, communication, conflict, and relationship success.</p>
+    <p>Singlehood, Cohabitation, Marriage, Communication, Conflict, and Relationship Success</p>
   </div>
 
   <div class="section">
@@ -100,15 +118,15 @@ select{
     <p>Relationships are shaped by both personal choices and social forces. Sociologists study how culture, socialization, communication, gender expectations, economics, and family experiences influence the way people form, maintain, and sometimes end relationships.</p>
     <p>In this interactive lab, you will explore:</p>
     <ul>
-      <li>❤️ Relationship Pathways</li>
-      <li>🏠 Cohabitation Choices</li>
-      <li>🔍 Why Relationships Succeed or Fail</li>
-      <li>🏡 Marriage Across the Life Course</li>
-      <li>💬 Communication Lab</li>
-      <li>🚩 Spot the Communication Problem</li>
-      <li>🛠️ Repair the Conversation</li>
-      <li>❤️ Build a Better Message</li>
-      <li>🌱 Relationship Health Check</li>
+      <li>❤️ Relationship pathways</li>
+      <li>🏠 Cohabitation choices</li>
+      <li>🔍 Why relationships succeed or fail</li>
+      <li>🏡 Marriage across the life course</li>
+      <li>💬 Communication patterns</li>
+      <li>🚩 Communication problems</li>
+      <li>🛠️ Conversation repair strategies</li>
+      <li>❤️ Better message building</li>
+      <li>🌱 Relationship health reflection</li>
     </ul>
     <div class="reflection">
       <strong>Think About It:</strong>
@@ -173,5 +191,471 @@ select{
 
   <div class="section">
     <h2>🔍 Section 3: Why Relationships Succeed or Fail</h2>
-    <p>Researchers have found that some couples who cohabit before marriage experience different outcomes than couples who do not. Sociologists
-```
+    <p>Researchers have found that some couples who cohabit before marriage experience different outcomes than couples who do not. Sociologists debate whether cohabitation itself causes those outcomes or whether the characteristics of people who choose cohabitation explain the differences.</p>
+
+    <div class="activity-box">
+      <h3>🧠 Correlation or Cause?</h3>
+      <p>Read the scenario and decide which explanation is strongest.</p>
+
+      <p style="background:#ffffff; padding:15px; border-radius:10px; border:1px solid #ddd;">
+        Researchers find that couples who lived together before marriage have higher divorce rates than couples who did not live together before marriage.
+      </p>
+
+      <button onclick="showSelection()">Selection Effect</button>
+      <button onclick="showCausal()">Causal Cohabitation Effect</button>
+
+      <div id="relationshipResult" class="result">Select an explanation above.</div>
+    </div>
+
+    <div class="reflection">
+      <strong>Concept Connection:</strong>
+      <p>The <strong>Selection Effect</strong> argues that people who choose cohabitation may already differ from those who do not. The <strong>Causal Cohabitation Effect</strong> argues that living together itself changes attitudes and behaviors in ways that influence relationship outcomes.</p>
+      <p>Sociologists often ask: Did cohabitation cause the outcome, or were the couples already different before they moved in together?</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🏡 Section 4: Marriage Across the Life Course</h2>
+    <p>Marriage is not a single event. Relationships change over time as couples experience education, careers, parenting, health challenges, economic changes, and aging. Sociologists examine how these transitions influence marital satisfaction and family life.</p>
+
+    <div class="activity-box">
+      <h3>🏡 Family Life Simulator</h3>
+      <p>Choose a life event and see how it might affect a relationship.</p>
+
+      <select id="lifeChoice">
+        <option value="">Choose a life event...</option>
+        <option value="newlywed">Newly Married Couple</option>
+        <option value="children">Birth of a Child</option>
+        <option value="career">Major Career Change</option>
+        <option value="boomerang">Adult Child Moves Back Home</option>
+        <option value="retirement">Retirement Years</option>
+      </select>
+
+      <br>
+      <button onclick="showLifeStage()">Explore Life Stage</button>
+
+      <div id="lifeResult" class="result">Choose a life event above.</div>
+    </div>
+
+    <div class="reflection">
+      <strong>Concept Connection:</strong>
+      <p>Couples often engage in <strong>identity bargaining</strong> as family roles change. Research also shows connections between <strong>marriage and health</strong>, while events such as the <strong>boomerang generation</strong> can create both opportunities and challenges for families.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>💬 Section 5: Communication Lab</h2>
+    <p>Research consistently finds that communication is one of the strongest predictors of relationship satisfaction. Healthy communication helps people feel heard, respected, understood, and connected. Poor communication often contributes to conflict, resentment, misunderstanding, and emotional distance.</p>
+
+    <div class="activity-box">
+      <h3>💬 Communication Detective</h3>
+      <p>Select a communication concept to learn how it influences relationships.</p>
+
+      <select id="communicationChoice">
+        <option value="">Choose a concept...</option>
+        <option value="listening">Listening</option>
+        <option value="verbal">Verbal Communication</option>
+        <option value="nonverbal">Nonverbal Communication</option>
+        <option value="selfdisclosure">Self-Disclosure</option>
+        <option value="validation">Validation</option>
+        <option value="mansplaining">Mansplaining</option>
+        <option value="power">Power</option>
+        <option value="productive">Productive Communication</option>
+      </select>
+
+      <br>
+      <button onclick="showCommunication()">Explore Concept</button>
+
+      <div id="communicationResult" class="result">Choose a communication concept above.</div>
+    </div>
+
+    <div class="reflection">
+      <strong>Think About It:</strong>
+      <p>Have you ever had a conversation where someone heard your words but did not truly listen? What was the difference?</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🚩 Section 6: Spot the Communication Problem</h2>
+    <p>Many relationship conflicts are not caused by the topic being discussed but by the way people communicate. Read each statement and identify the communication problem being demonstrated.</p>
+
+    <div class="activity-box">
+      <h3>🚩 Communication Problem Detector</h3>
+      <p>Select a statement:</p>
+
+      <select id="problemChoice">
+        <option value="">Choose a statement...</option>
+        <option value="criticism">"You never do anything right."</option>
+        <option value="blaming">"This whole situation is your fault."</option>
+        <option value="nagging">"I already told you five times and now I have to tell you again."</option>
+        <option value="silent">Partner refuses to speak for three days after an argument.</option>
+        <option value="contempt">"You are so lazy. I don't know why I even bother talking to you."</option>
+        <option value="aggression">Partner begins yelling, threatening, and slamming doors during an argument.</option>
+        <option value="coercion">"If you loved me, you would do what I want."</option>
+        <option value="denial">"I never said that," despite clear evidence.</option>
+        <option value="repression">A person refuses to acknowledge painful emotions and avoids discussing them.</option>
+        <option value="scapegoating">"Everything wrong in this family is because of you."</option>
+      </select>
+
+      <br>
+      <button onclick="showProblem()">Identify Problem</button>
+
+      <div id="problemResult" class="result">Choose a statement above.</div>
+    </div>
+
+    <div class="reflection">
+      <strong>Why This Matters:</strong>
+      <p>Communication problems often create ripple effects including resentment, emotional withdrawal, anger, reduced trust, misunderstandings, and relationship dissatisfaction.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🛠️ Section 7: Repair the Conversation</h2>
+    <p>Identifying communication problems is important, but healthy relationships also require communication repair. Read each conversation and choose the response that best improves communication.</p>
+
+    <div class="activity-box">
+      <h3>🛠️ Communication Repair Shop</h3>
+      <p><strong>Partner A:</strong><br>"I feel overwhelmed doing all of the housework."</p>
+      <p><strong>Partner B responds:</strong></p>
+
+      <select id="repairChoice">
+        <option value="">Choose a response...</option>
+        <option value="bad1">"Maybe if you were more organized it wouldn't bother you."</option>
+        <option value="bad2">"You always complain about everything."</option>
+        <option value="good">"It sounds like you're feeling overwhelmed. How can we divide responsibilities more fairly?"</option>
+        <option value="bad3">"That's not really a problem."</option>
+      </select>
+
+      <br>
+      <button onclick="repairConversation()">Evaluate Response</button>
+
+      <div id="repairResult" class="result">Choose a response above.</div>
+    </div>
+
+    <div class="reflection">
+      <strong>Communication Skill:</strong>
+      <p>Healthy communication often includes active listening, empathy, validation, collaboration, and problem-solving rather than criticism, defensiveness, or dismissal.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>❤️ Section 8: Build a Better Message</h2>
+    <p>Many communication problems occur because people express frustration through criticism, blame, or hostility rather than clearly communicating their needs. One strategy often taught in relationship education is the use of I-Statements.</p>
+
+    <div class="activity-box">
+      <h3>❤️ Turn Criticism Into Communication</h3>
+      <p>Select a critical statement and see how it can be transformed into a healthier message.</p>
+
+      <select id="messageChoice">
+        <option value="">Choose a statement...</option>
+        <option value="dishes">"You never help around the house."</option>
+        <option value="phone">"You care more about your phone than me."</option>
+        <option value="late">"You're always late."</option>
+        <option value="listen">"You never listen to anything I say."</option>
+        <option value="kids">"You leave all the parenting to me."</option>
+      </select>
+
+      <br>
+      <button onclick="buildMessage()">Build Better Message</button>
+
+      <div id="messageResult" class="result">Choose a statement above.</div>
+    </div>
+
+    <div class="activity-box">
+      <h3>📝 The I-Statement Formula</h3>
+      <p style="font-size:18px; line-height:2;">
+        <strong>I feel</strong> ________<br>
+        <strong>when</strong> ________<br>
+        <strong>because</strong> ________<br>
+        <strong>I would like</strong> ________
+      </p>
+    </div>
+
+    <div class="reflection">
+      <strong>Why It Works:</strong>
+      <p>I-Statements focus on feelings and needs rather than attacking another person's character. This reduces defensiveness and increases the likelihood of productive communication.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🌱 Section 9: Relationship Health Check</h2>
+    <p>Healthy relationships require communication, trust, respect, empathy, and problem-solving. Rate yourself on the following communication skills.</p>
+
+    <div class="activity-box">
+      <h3>📊 Relationship Health Check</h3>
+      <p>For each statement, select your score:</p>
+
+      <div class="score-row">
+        <p>👂 I actively listen before responding.</p>
+        <select class="healthScore">
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Usually</option>
+          <option value="4">Almost Always</option>
+        </select>
+      </div>
+
+      <div class="score-row">
+        <p>🤝 I validate other people's feelings even when I disagree.</p>
+        <select class="healthScore">
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Usually</option>
+          <option value="4">Almost Always</option>
+        </select>
+      </div>
+
+      <div class="score-row">
+        <p>❤️ I communicate my feelings clearly and respectfully.</p>
+        <select class="healthScore">
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Usually</option>
+          <option value="4">Almost Always</option>
+        </select>
+      </div>
+
+      <div class="score-row">
+        <p>🛠️ I focus on solving problems rather than assigning blame.</p>
+        <select class="healthScore">
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Usually</option>
+          <option value="4">Almost Always</option>
+        </select>
+      </div>
+
+      <div class="score-row">
+        <p>🌱 I am willing to compromise when appropriate.</p>
+        <select class="healthScore">
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Usually</option>
+          <option value="4">Almost Always</option>
+        </select>
+      </div>
+
+      <div class="score-row">
+        <p>💬 I use self-disclosure to share my thoughts and feelings.</p>
+        <select class="healthScore">
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Usually</option>
+          <option value="4">Almost Always</option>
+        </select>
+      </div>
+
+      <div class="score-row">
+        <p>⚖️ I treat others with respect during disagreements.</p>
+        <select class="healthScore">
+          <option value="1">Rarely</option>
+          <option value="2">Sometimes</option>
+          <option value="3">Usually</option>
+          <option value="4">Almost Always</option>
+        </select>
+      </div>
+
+      <button onclick="relationshipScore()">Calculate My Score</button>
+
+      <div id="healthResult" class="result">Complete the checklist and calculate your score.</div>
+    </div>
+
+    <div class="reflection">
+      <strong>Remember:</strong>
+      <p>This activity is for self-reflection, not diagnosis. Communication skills can improve with practice, feedback, and intentional effort.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🎓 Final Reflection</h2>
+    <p>Throughout this Relationship Lab, you explored how sociologists study singlehood, cohabitation, marriage, communication, conflict, and relationship satisfaction.</p>
+    <p>One of the most important findings from relationship research is that healthy relationships are rarely the result of luck. Instead, they are built through communication, trust, respect, empathy, shared expectations, and a willingness to work through challenges together.</p>
+
+    <div class="reflection">
+      <strong>Reflection Question:</strong>
+      <p>Of all the communication problems and relationship concepts explored in this lab, which do you think has the greatest impact on relationship success and why?</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><strong>SOC-213 Sociology of the Family</strong> | Module Five Relationship Lab</p>
+  </div>
+
+</div>
+
+<script>
+function showSqueeze(){
+  const choice = document.getElementById("squeezeChoice").value;
+  const result = document.getElementById("squeezeResult");
+
+  if(choice === "balanced"){
+    result.innerHTML = "⚖️ Community A has a balanced sex ratio. Dating and marriage opportunities may still vary by age, class, race, religion, education, and personal preferences, but the basic gender ratio is relatively even.";
+  } else if(choice === "women"){
+    result.innerHTML = "👥 Community B has more women than men. This may create a marriage squeeze for women seeking male partners because the number of available men is lower. Sociologists connect this to relationship markets, inequality, and opportunity.";
+  } else if(choice === "men"){
+    result.innerHTML = "👥 Community C has more men than women. This may create a marriage squeeze for men seeking female partners because the number of available women is lower. Social patterns such as migration or female infanticide can affect sex ratios in some societies.";
+  } else {
+    result.innerHTML = "Choose a community above.";
+  }
+}
+
+function showCohab(){
+  const choice = document.getElementById("cohabChoice").value;
+  const result = document.getElementById("cohabResult");
+
+  if(choice === "dating"){
+    result.innerHTML = "❤️ Dating Cohabitation: The couple lives together while dating, but marriage may not yet be planned or clearly discussed.";
+  } else if(choice === "premarital"){
+    result.innerHTML = "💍 Premarital Cohabitation: The couple lives together before marriage and may view cohabitation as a step toward marriage.";
+  } else if(choice === "serial"){
+    result.innerHTML = "🔁 Serial Cohabitation: A person lives with multiple partners over time in a series of cohabiting relationships.";
+  } else if(choice === "substitute"){
+    result.innerHTML = "🏡 Substitute Marriage: The couple lives together long-term as an alternative to formal marriage.";
+  } else {
+    result.innerHTML = "Choose a scenario above.";
+  }
+}
+
+function showSelection(){
+  document.getElementById("relationshipResult").innerHTML =
+  "🔍 Selection Effect: The higher divorce rate may be explained by characteristics of the people who chose cohabitation. Values, attitudes, commitment levels, religion, or views about marriage may differ before the couple ever begins living together.";
+}
+
+function showCausal(){
+  document.getElementById("relationshipResult").innerHTML =
+  "🏠 Causal Cohabitation Effect: Living together may change expectations, commitment patterns, or relationship dynamics in ways that influence later marital outcomes. In this explanation, cohabitation itself contributes to the outcome.";
+}
+
+function showLifeStage(){
+  const choice = document.getElementById("lifeChoice").value;
+  const result = document.getElementById("lifeResult");
+
+  if(choice === "newlywed"){
+    result.innerHTML = "💍 Newly Married: Couples often negotiate expectations about finances, chores, careers, communication, and family roles. Sociologists refer to this adjustment process as identity bargaining.";
+  } else if(choice === "children"){
+    result.innerHTML = "👶 New Child: Parenting responsibilities often increase stress, reduce free time, and require couples to renegotiate roles and responsibilities.";
+  } else if(choice === "career"){
+    result.innerHTML = "💼 Career Change: Promotions, layoffs, relocations, and educational opportunities can affect family finances, time together, and household responsibilities.";
+  } else if(choice === "boomerang"){
+    result.innerHTML = "🏠 Boomerang Generation: An adult child returns home after college, financial hardship, or life transitions. This can create both support and stress within the family.";
+  } else if(choice === "retirement"){
+    result.innerHTML = "🌅 Retirement: Couples may experience greater time together, changing identities, health concerns, and adjustments to new daily routines.";
+  } else {
+    result.innerHTML = "Choose a life event above.";
+  }
+}
+
+function showCommunication(){
+  const choice = document.getElementById("communicationChoice").value;
+  const result = document.getElementById("communicationResult");
+
+  if(choice === "listening"){
+    result.innerHTML = "👂 Listening involves actively paying attention, asking questions, and attempting to understand another person's perspective rather than simply waiting for your turn to speak.";
+  } else if(choice === "verbal"){
+    result.innerHTML = "🗣️ Verbal Communication refers to the words we use to express ideas, feelings, concerns, and needs. Word choice can strengthen or damage relationships.";
+  } else if(choice === "nonverbal"){
+    result.innerHTML = "🎭 Nonverbal Communication includes facial expressions, body language, posture, gestures, tone of voice, eye contact, and physical distance.";
+  } else if(choice === "selfdisclosure"){
+    result.innerHTML = "❤️ Self-Disclosure occurs when people share personal thoughts, feelings, fears, goals, and experiences. Healthy relationships often involve increasing levels of self-disclosure.";
+  } else if(choice === "validation"){
+    result.innerHTML = "🤝 Validation occurs when people acknowledge and recognize another person's feelings or experiences without necessarily agreeing with them.";
+  } else if(choice === "mansplaining"){
+    result.innerHTML = "⚠️ Mansplaining refers to situations where a man explains something to a woman in a condescending manner, often assuming she lacks knowledge regardless of her actual expertise.";
+  } else if(choice === "power"){
+    result.innerHTML = "⚖️ Power refers to the ability to influence decisions, control resources, shape outcomes, or affect the behavior of others within a relationship.";
+  } else if(choice === "productive"){
+    result.innerHTML = "🌱 Productive Communication involves listening, respect, empathy, validation, compromise, and collaborative problem solving.";
+  } else {
+    result.innerHTML = "Choose a communication concept above.";
+  }
+}
+
+function showProblem(){
+  const choice = document.getElementById("problemChoice").value;
+  const result = document.getElementById("problemResult");
+
+  if(choice === "criticism"){
+    result.innerHTML = "🚩 Criticism: Attacking a person's character rather than addressing a specific behavior.";
+  } else if(choice === "blaming"){
+    result.innerHTML = "🚩 Blaming: Assigning responsibility to another person without recognizing shared responsibility or problem-solving opportunities.";
+  } else if(choice === "nagging"){
+    result.innerHTML = "🚩 Nagging: Repeated complaints or reminders that often create frustration and defensiveness.";
+  } else if(choice === "silent"){
+    result.innerHTML = "🚩 Silent Treatment: Withdrawing communication as a way to avoid, punish, or control another person.";
+  } else if(choice === "contempt"){
+    result.innerHTML = "🚩 Contempt: Communicating disrespect, disgust, superiority, or ridicule toward another person.";
+  } else if(choice === "aggression"){
+    result.innerHTML = "🚩 Aggression: Using intimidation, threats, hostility, or anger to gain control during conflict.";
+  } else if(choice === "coercion"){
+    result.innerHTML = "🚩 Coercion: Pressuring someone through guilt, threats, manipulation, or emotional leverage.";
+  } else if(choice === "denial"){
+    result.innerHTML = "🚩 Denial: Refusing to acknowledge facts, behaviors, or realities that are difficult to accept.";
+  } else if(choice === "repression"){
+    result.innerHTML = "🚩 Repression: Avoiding awareness of uncomfortable emotions, memories, or feelings.";
+  } else if(choice === "scapegoating"){
+    result.innerHTML = "🚩 Scapegoating: Blaming one person for larger family or relationship problems.";
+  } else {
+    result.innerHTML = "Choose a statement above.";
+  }
+}
+
+function repairConversation(){
+  const choice = document.getElementById("repairChoice").value;
+  const result = document.getElementById("repairResult");
+
+  if(choice === "bad1"){
+    result.innerHTML = "❌ This response is defensive and shifts blame rather than addressing the concern being expressed.";
+  } else if(choice === "bad2"){
+    result.innerHTML = "❌ This response contains criticism and invalidates the speaker's feelings.";
+  } else if(choice === "good"){
+    result.innerHTML = "✅ Excellent! This response demonstrates listening, validation, empathy, and collaborative problem-solving. It focuses on the issue rather than attacking the person.";
+  } else if(choice === "bad3"){
+    result.innerHTML = "❌ This response dismisses the other person's feelings and fails to provide validation.";
+  } else {
+    result.innerHTML = "Choose a response above.";
+  }
+}
+
+function buildMessage(){
+  const choice = document.getElementById("messageChoice").value;
+  const result = document.getElementById("messageResult");
+
+  if(choice === "dishes"){
+    result.innerHTML = "✅ Better Message:<br><br><strong>I feel overwhelmed when household chores pile up because I feel like I am handling them alone. I would like us to create a schedule that feels fair to both of us.</strong>";
+  } else if(choice === "phone"){
+    result.innerHTML = "✅ Better Message:<br><br><strong>I feel disconnected when we spend a lot of time on our phones because I miss spending time together. I would like us to set aside time to focus on each other.</strong>";
+  } else if(choice === "late"){
+    result.innerHTML = "✅ Better Message:<br><br><strong>I feel frustrated when plans start late because I value our time together. I would like us to communicate if schedules change.</strong>";
+  } else if(choice === "listen"){
+    result.innerHTML = "✅ Better Message:<br><br><strong>I feel unheard when I do not receive a response because I want to know my thoughts are being understood. I would like us to practice active listening during conversations.</strong>";
+  } else if(choice === "kids"){
+    result.innerHTML = "✅ Better Message:<br><br><strong>I feel exhausted when most of the parenting responsibilities fall on me because I need support. I would like us to discuss ways to share responsibilities more evenly.</strong>";
+  } else {
+    result.innerHTML = "Choose a statement above.";
+  }
+}
+
+function relationshipScore(){
+  const scores = document.querySelectorAll(".healthScore");
+  let total = 0;
+
+  scores.forEach(item => {
+    total += parseInt(item.value);
+  });
+
+  const result = document.getElementById("healthResult");
+
+  if(total >= 25){
+    result.innerHTML = "🏆 Communication Champion<br><br>You demonstrate many communication behaviors associated with healthy relationships. Continue practicing active listening, validation, and productive communication.";
+  } else if(total >= 18){
+    result.innerHTML = "🌿 Healthy Communicator<br><br>You have a strong foundation of communication skills and are developing healthy relationship habits.";
+  } else if(total >= 12){
+    result.innerHTML = "🛠️ Needs Practice<br><br>You demonstrate some healthy communication habits but have opportunities to strengthen listening, validation, and conflict resolution skills.";
+  } else {
+    result.innerHTML = "🔧 Time for a Tune-Up<br><br>Communication skills improve through practice. Focus on listening, empathy, validation, and expressing needs respectfully.";
+  }
+}
+</script>
+
+</body>
+</html>
